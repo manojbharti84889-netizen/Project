@@ -1,15 +1,15 @@
 Adhar_record={}
 def add_adhar_record():
-   name=input('Enter your name')
-   adhar_num=int(input('Enter your adhar number'))
-   dob=input('Enter your date of birth (DD-MM-YY)')
-   address=input('Enter your address')
+   name=input('Enter your name:')
+   adhar_num=int(input('Enter your adhar number:'))
+   dob=input('Enter your date of birth (DD-MM-YY):')
+   address=input('Enter your address:')
    Adhar_record[adhar_num]={"Name":name,
                             "DOB":dob,
                             "Address":address}
    print('Adhar record added successfully')
    
-def view_adhar_record():
+def view_all_record():
     for adhar_num, user_details in Adhar_record.items():
        print(f"Adhar number: {adhar_num}")
        for key, value in user_details.items():
@@ -18,7 +18,7 @@ def view_adhar_record():
 def search_adhar():
     adhar_num=int(input('Enter your number:'))
     if adhar_num in Adhar_record:
-       print(f"\nUser detail found to this adhar number:{adhar_num}")
+       print(f"User detail found to this adhar number:{adhar_num}")
        for key, value in Adhar_record[adhar_num].items():
           print(f"{key}: {value}")
     else:
@@ -47,7 +47,7 @@ def show_menu():
     if choice==1:
        add_adhar_record()
     elif choice==2:
-       view_adhar_record()
+       view_all_record()
     elif choice==3:
        search_adhar()
     elif choice==4:
@@ -67,5 +67,6 @@ while True:
 
     
  
+
 
 
